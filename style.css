@@ -12,6 +12,7 @@
     --color-h3: #A59678;
     --color-h4: #A59678;
     --color-span: #A59678;
+    --color-first-section: #f1f1f1;
     --font-oswald: 'Oswald';
     --font-montserrat: 'Montserrat';
     --bp-small: 700px;
@@ -27,7 +28,10 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: var(--font-montserrat), sans-serif;;
+    font-family: var(--font-montserrat), sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 img {
@@ -58,3 +62,367 @@ ul {
     position: relative;
 }
 
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--color-navbar);
+    padding: 1rem 0;
+}
+
+main {
+    background: var(--color-main);
+    padding: 3rem 0;
+}
+
+footer {
+    background: var(--color-footer);
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.nav {
+    display: none;
+}
+
+.logo {
+    margin: 0 auto;
+    height: 2.5rem;
+}
+
+.nav__toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-button);
+    position: absolute;
+    left: 0;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    height: 5px;
+    background: white;
+    border-radius: 1rem;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+}
+
+.hamburger::before {
+    transform: translateY(-9px);
+}
+
+.hamburger::after {
+    transform: translateY(4px);
+}
+
+.nav--visible {
+    display: block;
+    margin-top: 1.25rem;
+}
+
+.nav__list {
+    text-align: center;
+}
+
+.nav__list:nth-child(2) {
+    margin-top: 2rem;
+}
+
+.nav__item {
+    margin-bottom: 0.75rem;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    opacity: 0.75;
+}
+
+.nav__link {
+    color: white;
+    font-family: var(--font-oswald);
+    font-size: 1.125rem;
+}
+
+.button {
+    padding: 0.25rem 1.25rem;
+    background: var(--color-button);
+    border-radius: 2rem;
+}
+
+.main__title {
+    font-family: var(--font-oswald);
+    font-size: 3rem;
+    line-height: 3rem;
+    color: white;
+}
+
+.main__title span {
+    color: var(--color-span);
+}
+
+.main__text {
+    font-family: var(--font-montserrat);
+    font-size: 1rem;
+    color: white;
+    margin: 2rem 0;
+}
+
+.main__button {
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: var(--font-oswald);
+    font-size: 1.25rem;
+}
+
+.section__first {
+    background: var(--color-first-section);
+    padding: 2rem 0;
+}
+
+.section__article {
+    text-align: center;
+}
+
+.section__article:nth-child(2) {
+    margin: 2rem 0;
+}
+
+.article__title {
+    color: var(--color-h3);
+    font-family: var(--font-oswald);
+    font-size: 1.5rem;
+}
+
+.article__text {
+    color: black;
+    font-family: var(--font-montserrat);
+    font-size: 1rem;
+}
+
+.section__second {
+    padding: 2rem 0;
+}
+
+.section__second__img {
+    width: 100%;
+}
+
+.aside__article {
+    padding: 1rem 1rem;
+    background: var(--color-aside);
+    text-align: center;
+}
+
+.aside__article:nth-child(2) {
+    margin: 1rem 0;
+}
+
+.aside__title, .aside__text {
+    color: white;
+}
+
+.section__second > div > article > .article__text:first-of-type {
+    margin-bottom: 0;
+}
+
+.footer__title {
+    font-family: var(--font-oswald);
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.footer__tag {
+    font-family: var(--font-oswald);
+    color: var(--color-h4);
+    font-size: 1.3125rem;
+}
+
+.footer__text {
+    font-family: var(--font-montserrat);
+    font-size: 1rem;
+    color: var(--color-footer-text);
+}
+
+.footer__item {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 700px) {
+    .row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        margin: auto 0 auto auto;
+    }
+
+    .nav__list {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav__list:nth-child(2) {
+        margin: 0 0 0 2rem;
+    }
+
+    .nav__item {
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .main__title {
+        margin-right: 4rem;
+        width: 40%;
+    }
+
+    .main__section {
+        align-self: flex-end;
+        width: 60%;
+    }
+
+    .section__article:nth-child(2) {
+        margin: 0 1.5rem;
+    }
+
+    .section__second > div > article > .article__text:first-of-type {
+        margin-bottom: 1rem;
+    }
+
+    .section__second__img {
+        width: 100%;
+        max-height: 350px;
+    }
+
+    .aside__article:nth-child(2) {
+        margin: 0 1rem;
+    }
+
+    .aside__row {
+        display: flex;
+    }
+
+    .aside__article,
+    .section__article,
+    .footer__nav {
+        align-self: stretch;
+    }
+
+    .footer__col__article {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .footer__col__links {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .main__title {
+        font-size: 5.625rem;
+        line-height: 6rem;
+        width: 570px;
+    }
+
+    .main__section {
+        width: 40%;
+    }
+
+    .main__text {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 6rem 0;
+    }
+
+    .main__button {
+        font-size: 1.5rem;
+    }
+
+    .article__title {
+        font-size: 1.875rem;
+    }
+
+    .article__text {
+        font-size: 1.125rem;
+    }
+
+    .article__title--bigger {
+        font-size: 2.25rem;
+    }
+
+    .article__text--bigger {
+        font-size: 1.3125rem;
+    }
+
+    .footer__title {
+        font-size: 3.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .section__second > .container {
+        display: flex;
+    }
+
+    .section__second > .container > aside {
+        display: block;
+        margin-left: 5rem;
+    }
+
+    .section__second__article {
+        width: 60%;
+    }
+
+    aside {
+        width: 40%;
+    }
+
+    .aside__article:nth-child(2) {
+        margin: 1rem 0;
+    }
+
+    .section__article:nth-child(2) {
+        margin: 0 5rem
+    }
+
+    footer {
+        padding: 4rem 0;
+    }
+
+    .footer__content {
+        display: flex;
+    }
+
+    .footer__col__article {
+        width: 40%;
+        margin: 0 5rem 0 0 ;
+    }
+
+    .footer__col__links {
+        width: 60%;
+    }
+}
